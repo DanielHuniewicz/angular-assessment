@@ -1,0 +1,14 @@
+<div class="card-container">
+    <h2>{{author}}</h2>
+    <button id="back" (click)="backClicked()">BACK</button>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+        </tr>
+        <tr *ngFor="let book of books">
+            <td><a routerLink="/details/{{book.id}}">{{book.id}}</a></td>
+            <td>{{book.title}}</td>
+        </tr>    
+    </table>     
+</div>
