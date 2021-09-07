@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IBooks } from './books';
+import { Book } from './book/book.model';
 import { Observable } from 'rxjs';
 import 'rxjs/Rx';
 import { map } from 'rxjs/operators';
@@ -32,14 +33,11 @@ export class BookService {
     );
   }
 
-  // addBook (book: []) {
-  //   if (book) {
-  //     this.heroService.addHero(book).subscribe(hero => {
-  //       //I assume the response from the addHero Observable is a Hero object
-  //       this.heroes.push(hero);
-  //     });
-  //   } else {
-  //     console.error('Error! empty');
-  //   }
-  // }
+  createBook(payload: Book): Observable<Book> {
+    return this.http.post<Book>(this._url, payload);
+  }
+
+  deleteBook(id: number) {
+    return this.http.delete(this._url + id);
+  }
 }

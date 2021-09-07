@@ -7,7 +7,13 @@ import { DetailsComponent } from './details/details.component';
 import { AuthorComponent } from './author/author.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from "@ngrx/effects";
+import { BookEffects } from "./book/book.effects";
+import { BookService } from './book.service';
+import { reducer } from './book/book.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,9 +27,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    EffectsModule.forRoot([]),
+    StoreModule.forRoot(reducer),
+    EffectsModule.forFeature([BookEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

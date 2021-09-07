@@ -11,7 +11,7 @@
                   <th>Author</th>
                   <th>Action</th>
                 </tr>
-                <tr *ngFor="let book of books">
+                <tr *ngFor="let book of books2">
                     <td><a routerLink="/details/{{book.id}}">{{book.id}}</a></td>
                     <td>{{book.title}}</td>
                     <td><a routerLink="/author/{{book.author}}">{{book.author}}</a></td>
