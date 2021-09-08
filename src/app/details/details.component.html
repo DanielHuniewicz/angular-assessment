@@ -1,6 +1,31 @@
-<button id="back" (click)="backClicked()">BACK</button>
-<tr *ngFor="let book of books">
-    <td>{{book.id}}</td>
-    <td>{{book.title}}</td>
-    <td>{{book.author}}</td>
-</tr>  
+<div class="card-container d-flex justify-content-center">
+    <div class="card w-50" *ngFor="let book of books">
+        <div class="card-header">
+            <h2>Details</h2>
+        </div>
+        <div class="d-flex">
+            <div>
+                <img src="../../assets/covers/book-cover.jpg" alt="book-cover" height="500">
+            </div>
+            <div class="book-info my-3 mx-4">
+                <h1>{{book.title}}</h1>
+                <h2>{{book.author}}</h2>
+                <p class="pt-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus urna, varius id semper at, sodales eget turpis. 
+                    Vestibulum vitae ipsum vitae mi aliquam tempor. Suspendisse nec congue orci. Sed mi tortor, tincidunt nec gravida et, 
+                    dapibus sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam 
+                    erat volutpat. Donec semper, leouctor est. Vestibulum eget neque varius, bibendum est vel, tristique 
+                    magna. Sed ullamcorper augue non massa viverra fringilla ac ut nisl. Etiam sollicitudin massa ipsum, nec egestas augue 
+                    convallis at. Vivamus id aliquet dui, a mollis libero. Donec lacus lorem, aliquam at dolor nec, accumsan sollicitudin tortor.
+                </p>
+                <p>
+                    urpis ultricies, porttitor felis et, auctor est. Vestibulum eget neque varius, bibendum est vel, tristique 
+                    magna. Sed ullamcorper augue non massa viverra fringilla ac ut nisl. Etiam sollicitudin massa ipsum, nec egestas augue 
+                    convallis at. Vivamus id aliquet dui, a mollis libero. Donec lacus lorem, aliquam at dolor nec, accumsan sollicitudin tortor.
+                </p>
+                <button class="btn btn-link mr-3" (click)="backClicked()">Back</button>
+
+            </div>
+        </div>
+    </div>
+</div>

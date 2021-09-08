@@ -1,14 +1,32 @@
-<div class="card-container">
-    <h2>{{author}}</h2>
-    <button id="back" (click)="backClicked()">BACK</button>
-    <table>
-        <tr>
-          <th>ID</th>
-          <th>Title</th>
-        </tr>
-        <tr *ngFor="let book of books">
-            <td><a routerLink="/details/{{book.id}}">{{book.id}}</a></td>
-            <td>{{book.title}}</td>
-        </tr>    
-    </table>     
+<div class="card-container d-flex justify-content-center">
+    <div class="card w-50">
+        <div class="card-header">
+            <h2>Author</h2>
+        </div>
+        <div class="d-flex">
+            <div>
+                <img src="../../assets/authors/author-exemple.jpg" alt="book-cover" height="400">
+            </div>
+            <div class="book-info my-3 mx-4">
+                <h2>{{author}}</h2>
+                <p class="pt-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus urna, varius id semper at, sodales eget turpis. 
+                    Vestibulum vitae ipsum vitae mi aliquam tempor. Suspendisse nec congue orci. Sed mi tortor, tincidunt nec gravida et, 
+                    dapibus sit amet leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam 
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet mi tortor, tincidunt nec gravida et, dapibus sit amet leo. Orci varius natoque penatibus 
+                    et magnis dis parturient montes, nascetur ridiculus mus. Aliquam 
+                </p>
+                <table>
+                    <tr *ngFor="let book of books">
+                        <td class="pr-2"><b><a routerLink="/details/{{book.id}}">{{book.id}}</a></b></td>
+                        <td>{{book.title}}</td>
+                    </tr>    
+                </table>  
+                <button class="btn btn-link mt-3" (click)="backClicked()">Back</button>
+
+            </div>
+        </div>
+    </div>
 </div>
